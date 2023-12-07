@@ -1,0 +1,200 @@
+:root {
+  --primary-color: #c6c3c3;
+  --secondary-color: #ffffff;
+  --black-color: #000000;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+a{
+    text-decoration: none;
+    color: var(--secondary-color);
+}
+
+a:hover {
+    color: aqua;
+}
+.video-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+#background-video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+.content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.login_box {
+  position: relative;
+  display: grid;
+  width: 450px;
+  backdrop-filter: blur(25px);
+  border: 2px solid var(--primary-color);
+  border-radius: 15px;
+  padding: 7.5em 7.5em 4em 2.5em;
+  color: var(--secondary-color);
+}
+.login-header {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primary-color);
+  width: 140px;
+  height: 70px;
+  border-radius: 0 0 20px 20px;
+}
+
+.login-header span {
+  font-size: 30px;
+  color: var(--black-color);
+}
+
+.login-header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -30px;
+  width: 30px;
+  height: 30px;
+  border-top-right-radius: 50%;
+  background: transparent;
+}
+
+.login-header::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -30px;
+  width: 30px;
+  height: 30px;
+  border-top-left-radius: 50%;
+  background: transparent;
+}
+
+.input-field:focus ~ .label,
+.input-field:valid .label {
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    font-size: 14px;
+    border-radius: 30px;
+    color: var(--black-color);
+    padding: 0 10px;
+    background-color: #c6c3c3;
+}
+
+.fa-user, .fa-lock{
+    position: absolute;
+    top: 9px;
+    right: 2px;
+    font-size: 20px;
+}
+
+.remember-forgot {
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+}
+
+.input_box{
+    position: relative;
+    display:flex;
+    flex-direction: column;
+    margin: 20px 0;
+}
+
+.input-field {
+    width: 100%;
+    height: 33px;
+    font-size: 16px;
+    background: transparent;
+    color: var(--secondary-color);
+    padding-inline: 20px 50px;
+    border: 2px solid var(--primary-color);
+    border-radius: 30px;
+    outline: none;
+}
+
+#user {
+    margin-bottom: 10px;
+}
+
+.label{
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    transition: .2s;
+}
+
+.input-submit {
+    width: 100%;
+    height: 50px;
+    background: #ececec;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.input-submit:hover {
+    background: aqua;
+}
+
+.register a{
+    font-weight: 500;
+}
+
+@media only screen and (max-width: 564px) {
+    .content {
+        padding: 20px;
+    }
+    .login_box {
+        padding: 7.5em -1.5em 4em 1.5em;
+        width: 190px;
+    }
+    .fa-user, .fa-lock{
+        position: absolute;
+        top: 9px;
+        right: -40px;
+        font-size: 15px;
+    }
+    .remember-forgot, .register {
+        font-size: 13px;
+        position: relative;
+        left: 10px;
+    }
+    .forgot a{
+        margin-left: -50px;
+        position: relative;
+        left: 45px;
+        top: 5px;
+    }
+    .input-submit {
+        width: 140%;
+        height: 40px;
+    }
+}
